@@ -1,0 +1,32 @@
+<h3 style="text-align: center;">SISTEMI I MENAXHIMIT</h3>
+<br>
+<div>
+  <div>
+    <p> Vendos daten 1 per te shtuar punonjes.</p> 
+    <button class="btn btn-outline-dark" routerLink='/add' [disabled]='!op'>SHTO</button>
+  </div>
+  <mat-form-field ngModel>
+    <input name="date" ngModel="date" matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="onChangeEvent($event)" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+  </mat-form-field>
+</div>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>EMER</th>
+      <th>MBIEMER</th>
+      <th>POZICION</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of addemp$ | async">
+      <td>{{ e.payload.val().name }}</td>
+      <td>{{ e.payload.val().surname }}</td>
+      <td>{{ e.payload.val().category }}</td>
+      <td><a [routerLink]="['/employee/',e.key]">Shiko</a></td>
+    </tr>
+  </tbody>
+</table>

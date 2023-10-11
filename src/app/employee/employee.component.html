@@ -1,0 +1,34 @@
+<h3 style="text-align: center;">TE DHENAT E PUNONJESIT</h3>
+<br>
+<table class="table table-bordered">
+    <tr>
+        <th>EMRI</th>
+        <td>{{employee.payload.val().name}}</td>
+    </tr>
+    <tr>
+        <th>MBIEMRI</th>
+        <td>{{employee.payload.val().surname}}</td>
+    </tr>
+    <tr>
+        <th>POZICIONI</th>
+        <td>{{employee.payload.val().category}}</td>
+    </tr>
+    <tr>
+        <th>PAGA PER ORE(LEKE/ORE)</th>
+        <td>{{employee.payload.val().salary}}</td>
+    </tr>
+    <tr>
+        <th>DATA E REGJISTRIMIT</th>
+        <td>{{employee.payload.val().date}}</td>
+    </tr>
+    <tr>
+        <th>ORET E PUNES</th>
+        <td>{{8*this.dita}}</td>
+    </tr>
+    <tr>
+        <th>PAGA(LEKE)</th>
+        <td>{{8*this.dita*this.employee.payload.val().salary}}</td>
+    </tr>
+</table>
+<br>
+<button type="button" (click)="delete()" class="btn btn-danger">FSHI</button>
